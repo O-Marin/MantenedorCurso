@@ -20,8 +20,8 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="listarInscripciones.jsp">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Inscripciones</a>
+						aria-current="page" href="index.jsp">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/Patrones_disenio_mantenedorCursos/preListarInscripciones">Inscripciones</a>
 					</li>
 					
 				</ul>
@@ -29,7 +29,7 @@
 		</div>
 	</nav>
 	<div class="fadeIn first">
-				<img src="./common/img/earth.png" id="icon" alt="User Icon" />
-			</div>
+		<img src="./common/img/earth.png" id="icon" alt="User Icon" />
+	</div>
 </body>
 </html>

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import cl.omarin.entidades.InscripcionDTO;
@@ -15,13 +16,14 @@ public class InscripcionDao {
 				
 		int max=0;
 		
-		String consultaProximoId = " select max(id_inscripcion) + 1 from inscripcion";
+		//elige el id siguiente al ultimo
+		String consultaProximoId = " select max(id_inscripcion) + 1 from curso.inscripcion";
 		// query que insertara el valor
-		String insertarInscripcion = " insert into inscripcion(id_inscripcion,nombre,celular"
+		String insertarInscripcion = " insert into curso.inscripcion(id_inscripcion,nombre,celular"
 				+ "id_curso, id_forma_pago)" + " values(?,?,?,?,?)";
 		
 		//conexion a la base de datos y ejecucion de la sentencia
-		String consultaSql = " select id_forma_pago, descripcion from forma_pago";
+		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		String url = "jdbc:mysql://localhost:3306/curso";
 		Connection conexion = DriverManager.getConnection(url, "root", "password");
@@ -41,9 +43,9 @@ public class InscripcionDao {
 				
 				stmt2.setInt(1, max);
 				stmt2.setString(2, dto.getNombre());
-				stmt2.setString(3, dto.getCelular());
+				stmt2.setInt(3, dto.getTelefono());
 				stmt2.setString(4, dto.getId_curso());
-				stmt2.setString(5, dto.getId_forma_de_pago());
+				stmt2.setString(5, dto.getId_forma_pago());
 				
 				if(stmt2.executeUpdate() != 1) {
 					throw new RuntimeException("A ocurrido un error inesperado");
@@ -60,8 +62,31 @@ public class InscripcionDao {
 		
 	}
 	
-	public List<InscripcionDTO> getInscripcion(){
-		return null;
+	public List<InscripcionDTO> getInscripcion() throws ClassNotFoundException, SQLException{
+		List<InscripcionDTO> inscripciones = new ArrayList<InscripcionDTO>();
+		String consultaSql = " select * from curso.inscripcion";
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		String url = "jdbc:mysql://localhost:3306/curso";
+		Connection conexion = DriverManager.getConnection(url, "root", "password");
+		
+		try {
+			PreparedStatement stmt = conexion.prepareStatement(consultaSql);
+			ResultSet resultado = stmt.executeQuery();
+			
+			while(resultado.next()) {
+				InscripcionDTO inscripcion = new InscripcionDTO();
+				inscripcion.setId_curso(resultado.getString("id_curso"));
+				inscripcion.setId_inscription(resultado.getInt("id_inscripcion"));
+				inscripcion.setNombre(resultado.getString("nombre"));
+				inscripcion.setTelefono(resultado.getInt("telefono"));
+				inscripcion.setId_forma_pago(resultado.getString("id_forma_pago"));
+				inscripciones.add(inscripcion);
+			}
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return inscripciones;
 		
 	}
 }
