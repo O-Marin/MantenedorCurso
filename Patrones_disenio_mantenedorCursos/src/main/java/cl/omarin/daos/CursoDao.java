@@ -26,12 +26,10 @@ public class CursoDao {
 			// com.mysql.cj.jdbc.Driver.
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conexion = null;
-
 			String url = "jdbc:mysql://localhost:3306/curso";
-			DriverManager.getConnection(url, "root", "password");
+			
+			Connection conexion = DriverManager.getConnection(url, "root", "password");;
 			PreparedStatement stmt = conexion.prepareStatement(consultaSql);
-
 			ResultSet resultado = stmt.executeQuery();
 
 			while (resultado.next()) {
@@ -39,7 +37,7 @@ public class CursoDao {
 
 				cursoDto.setIdCurso(resultado.getString("id_curso"));
 				cursoDto.setDescripcion(resultado.getString("descripcion"));
-				cursoDto.setPrecio(resultado.getDouble("precio"));
+				cursoDto.setPrecio(resultado.getInt("precio"));
 				listaDeCursos.add(cursoDto);
 				
 				

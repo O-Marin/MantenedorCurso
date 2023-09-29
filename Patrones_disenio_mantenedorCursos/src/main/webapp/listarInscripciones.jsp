@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Inscripciones</title>
+<title>Lista de Inscripciones</title>
 <link href="./common/css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>

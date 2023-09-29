@@ -23,7 +23,8 @@
 						aria-current="page" href="index.jsp">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="/Patrones_disenio_mantenedorCursos/preListarInscripciones">Inscripciones</a>
 					</li>
-					
+					<li class="nav-item"><a class="nav-link" href="/Patrones_disenio_mantenedorCursos/preInscripcion">Inscribir</a>
+					</li>
 				</ul>
 			</div>
 		</div>

@@ -17,7 +17,7 @@ public class FormaDePagoDao {
 		List<FormaDePagoDTO> listaDeCursos = new ArrayList<FormaDePagoDTO>();
 
 		// creamos la consulta a la base de datos
-		String consultaSql = " select id_forma_pago, descripcion from forma_pago";
+		String consultaSql = " select * from forma_pago";
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
 
@@ -33,7 +33,7 @@ public class FormaDePagoDao {
 				FormaDePagoDTO formaPago = new FormaDePagoDTO();
 				formaPago.setId_forma_pago(resultado.getString("id_forma_pago"));
 				formaPago.setDescripcion(resultado.getString("descripcion"));
-				formaPago.setRecargo(resultado.getString("recargo"));
+				formaPago.setRecarga(resultado.getString("recarga"));
 				listaDeCursos.add(formaPago);
 			}
 		} catch (Exception ex) {

@@ -3,7 +3,7 @@ package cl.omarin.entidades;
 public class FormaDePagoDTO {
 	String id_forma_pago;
 	String descripcion;
-	String recargo;
+	String recarga;
 	
 	public String getId_forma_de_pago() {
 		return id_forma_pago;
@@ -17,11 +17,11 @@ public class FormaDePagoDTO {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public String getRecargo() {
-		return recargo;
+	public String getRecarga() {
+		return recarga;
 	}
-	public void setRecargo(String recargo) {
-		this.recargo = recargo;
+	public void setRecarga(String recargo) {
+		this.recarga = recargo;
 	}
 	
 	

@@ -3,7 +3,7 @@ package cl.omarin.entidades;
 public class CursoDTO {
 	String id_curso;
 	String descripcion;
-	double precio;
+	int precio;
 	
 	
 	public String getIdCurso() {
@@ -21,7 +21,7 @@ public class CursoDTO {
 	public double getPrecio() {
 		return precio;
 	}
-	public void setPrecio(double precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 	
