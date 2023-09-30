@@ -19,8 +19,7 @@ public class InscripcionDao {
 		//elige el id siguiente al ultimo
 		String consultaProximoId = " select max(id_inscripcion) + 1 from curso.inscripcion";
 		// query que insertara el valor
-		String insertarInscripcion = " insert into curso.inscripcion(id_inscripcion,nombre,celular"
-				+ "id_curso, id_forma_pago)" + " values(?,?,?,?,?)";
+		String insertarInscripcion = " insert into curso.inscripcion(id_inscripcion,nombre,telefono,id_curso, id_forma_pago)" + " values(?,?,?,?,?)";
 		
 		//conexion a la base de datos y ejecucion de la sentencia
 		
@@ -39,8 +38,7 @@ public class InscripcionDao {
 			ResultSet resultado = stmt1.executeQuery();
 			if(resultado.next()) {
 				//dado el id que sigue
-				max = resultado.getInt("id_inscripcion");
-				
+				max = resultado.getInt(1);
 				stmt2.setInt(1, max);
 				stmt2.setString(2, dto.getNombre());
 				stmt2.setInt(3, dto.getTelefono());
@@ -76,7 +74,7 @@ public class InscripcionDao {
 			while(resultado.next()) {
 				InscripcionDTO inscripcion = new InscripcionDTO();
 				inscripcion.setId_curso(resultado.getString("id_curso"));
-				inscripcion.setId_inscription(resultado.getInt("id_inscripcion"));
+				inscripcion.setId_inscripcion(resultado.getInt("id_inscripcion"));
 				inscripcion.setNombre(resultado.getString("nombre"));
 				inscripcion.setTelefono(resultado.getInt("telefono"));
 				inscripcion.setId_forma_pago(resultado.getString("id_forma_pago"));

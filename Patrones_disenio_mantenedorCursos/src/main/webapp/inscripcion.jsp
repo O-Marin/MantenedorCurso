@@ -48,7 +48,7 @@
 	</div>
 	<div class="container">
 		<div class="d-flex flex-column mb-3">
-			<form action="/posInscripcion">
+			<form action="posInscripcion">
 				<div class="form-group">
 					<label>Nombre</label>
 					<input type="text" name="nombre" id="nombre">

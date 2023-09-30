@@ -55,7 +55,7 @@ inscripciones = (List<InscripcionDTO>)request.getAttribute("listaInscripcionesAl
 			for(InscripcionDTO dto : inscripciones){
 		%> 
       <tr>
-        <td><%= dto.getId_inscription()%></td>
+        <td><%= dto.getId_inscripcion()%></td>
         <td><%= dto.getNombre()%></td>
         <td><%= dto.getTelefono()%></td>
         <td><%= dto.getId_curso()%></td>

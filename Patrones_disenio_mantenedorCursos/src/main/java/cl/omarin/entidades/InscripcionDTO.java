@@ -1,17 +1,17 @@
 package cl.omarin.entidades;
 
 public class InscripcionDTO {
-	int id_inscription;
+	int id_inscripcion;
 	String nombre;
 	int telefono;
 	String id_curso;
 	String id_forma_pago;
 	
-	public int getId_inscription() {
-		return id_inscription;
+	public int getId_inscripcion() {
+		return id_inscripcion;
 	}
-	public void setId_inscription(int id_inscription) {
-		this.id_inscription = id_inscription;
+	public void setId_inscripcion(int id_inscripcion) {
+		this.id_inscripcion = id_inscripcion;
 	}
 	public String getNombre() {
 		return nombre;
