@@ -40,10 +40,25 @@
 		<img src="./common/img/earth.png" id="icon" alt="User Icon" />
 	</div>
 	<h1>Solicitud Generada Correctamente</h1>
-	<p>Su codigo de inscripción es: <%=idInscripcion%></p>
-	<p>Telefono: <%=telefono%></p>
-	<p>Nombre: <%=nombre%></p>
-	<p>id del Curso: <%=idCurso%></p>
-	<p>Id de la forma de pago: <%=idFormaPago%></p>
+	<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id inscripcion</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">id Curso</th>
+      <th scope="col">id Forma Pago</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%=idInscripcion%></th>
+      <td><%=nombre%></td>
+      <td><%=telefono%></td>
+      <td><%=idCurso%></td>
+      <td><%=idFormaPago%></td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
