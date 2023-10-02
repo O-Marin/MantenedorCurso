@@ -9,6 +9,10 @@
 </head>
 <%
 	int idInscripcion = (Integer)request.getAttribute("idInscripcion");
+	String telefono = (String)request.getAttribute("telefono");
+	String nombre = (String) request.getAttribute("nombre");
+	String idCurso = (String)request.getAttribute("idCurso");
+	String idFormaPago = (String)request.getAttribute("idFormaPago");
 %>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -37,5 +41,9 @@
 	</div>
 	<h1>Solicitud Generada Correctamente</h1>
 	<p>Su codigo de inscripción es: <%=idInscripcion%></p>
+	<p>Telefono: <%=telefono%></p>
+	<p>Nombre: <%=nombre%></p>
+	<p>id del Curso: <%=idCurso%></p>
+	<p>Id de la forma de pago: <%=idFormaPago%></p>
 </body>
 </html>

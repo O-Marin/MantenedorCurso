@@ -42,6 +42,11 @@ public class PosInscripcion extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		request.setAttribute("nombre", nombre);
+		request.setAttribute("telefono", strTelefono);
+		request.setAttribute("idCurso", idCurso);
+		request.setAttribute("idFormaPago", idFormaPago);
+		
 		request.setAttribute("idInscripcion", idInscripcion);
 		
 		request.getRequestDispatcher("/preConfirmacion").forward(request, response);

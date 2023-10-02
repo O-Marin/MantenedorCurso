@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import cl.omarin.entidades.InscripcionDTO;
 import cl.omarin.facade.Facade;
 
+//este servlet recibe la informacion de una form
 @WebServlet("/preListarInscripciones")
 public class PreListarInscripciones extends HttpServlet {
 	private static final long serialVersionUID = 1L;

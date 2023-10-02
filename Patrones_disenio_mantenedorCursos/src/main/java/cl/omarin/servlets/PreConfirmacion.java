@@ -15,6 +15,13 @@ public class PreConfirmacion extends HttpServlet
 
 protected void doGet (HttpServletRequest request ,HttpServletResponse response)  throws ServletException,IOException
 	{
+	/*
+	 * String nombre = (String) request.getAttribute("nombre");
+	  int telefono = (int) request.getAttribute("telefono");
+	  String idCurso = (String) request.getAttribute("idCurso");
+	  String idFormaPago = (String) request.getAttribute("idFormaPago");
+	 * */
+	 
       request.getRequestDispatcher("confirmacion.jsp").forward(request, response);
    }
 }
